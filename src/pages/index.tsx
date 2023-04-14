@@ -1,15 +1,20 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-import { Button } from '@/components/Button';
 import Header from '@/components/Header';
 import { AppContainer } from '@/components/styled/AppContainer.styled';
 import Hero from '@/components/Hero';
 import Walkthrough from '@/components/Walkthrough';
-import Products from './products';
+import Products from '@/components/Products';
+import { GetServerSideProps } from 'next';
+import { ProductsType } from '../../types';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
+type Props = {
+  data: ProductsType[];
+};
+
+export default function Home({ data }: Props) {
   return (
     <AppContainer>
       <Head>
@@ -19,15 +24,25 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;900&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       <Header />
       <Hero />
       <Walkthrough />
-      <Products />
+      <Products data={data} />
     </AppContainer>
   );
 }
+
+const headers = {
+  'Content-Type': 'application/json',
+  Accept: 'application/json',
+  Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ODQ2MDdiNWE0NTAwMjFiNWY1MDEiLCJpYXQiOjE2ODE0OTEwNDB9.M9Mdl9O9jqyO1Nxy0Jaw0rXoa_k07fo_hE7-Rv3eKvY`,
+};
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch('https://coding-challenge-api.aerolab.co/products', {
+    headers,
+  });
+  const data = await res.json();
+
+  return { props: { data } };
+};

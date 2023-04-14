@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Filter,
   FilterBy,
@@ -8,18 +9,21 @@ import {
   HeaderTitle,
   LeftVector,
   LeftVectorContainer,
+  NumberText,
   PageFilter,
-  ProductSection,
+  PageText,
+  Pager,
+  RightVector,
+  RightVectorContainer,
   SortBy,
-} from '@/components/styled/Products.styled';
-import React from 'react';
+} from './styled/Products.styled';
 import vector from '../../public/assets/icons/chevron-active.svg';
 
 type Props = {};
 
-const Products = (props: Props) => {
+const ProductsHeader = (props: Props) => {
   return (
-    <ProductSection>
+    <>
       <HeaderTitle>
         <HeaderLeft>tech</HeaderLeft>
         <HeaderRight> products</HeaderRight>
@@ -47,10 +51,17 @@ const Products = (props: Props) => {
           <LeftVectorContainer>
             <LeftVector src={vector} alt="vector" />
           </LeftVectorContainer>
+          <Pager>
+            <PageText>Page</PageText>
+            <NumberText>1 of 2</NumberText>
+          </Pager>
+          <RightVectorContainer>
+            <RightVector src={vector} alt="vector" />
+          </RightVectorContainer>
         </PageFilter>
       </Header>
-    </ProductSection>
+    </>
   );
 };
 
-export default Products;
+export default ProductsHeader;

@@ -49,7 +49,7 @@ export const HeaderRight = styled.h2`
 `;
 
 export const FilterContainer = styled.div`
-  /* display: flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -58,11 +58,6 @@ export const FilterContainer = styled.div`
 
   width: 1464px;
   height: 64px;
-
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0; */
 `;
 
 export const Filter = styled.div`
@@ -71,14 +66,6 @@ export const Filter = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0px;
-  /* gap: 40px; */
-
-  /* width: 1051px;
-  height: 59px; */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 `;
 
 export const FilterBy = styled.div`
@@ -88,10 +75,6 @@ export const FilterBy = styled.div`
   align-items: center;
   padding: 0px;
   gap: 16px;
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 
   p {
     width: 81px;
@@ -134,15 +117,9 @@ export const SortBy = styled.div`
   height: 43px;
   margin-left: 100px;
 
-  flex: none;
-  order: 2;
-  flex-grow: 0;
-
   p {
     width: 71px;
     height: 27px;
-
-    /* Desktop/Text/L1/Default| */
 
     font-family: 'Montserrat';
     font-style: normal;
@@ -180,8 +157,6 @@ export const SortBy = styled.div`
 export const PageFilter = styled.div`
   box-sizing: border-box;
 
-  /* Auto layout */
-
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -192,18 +167,8 @@ export const PageFilter = styled.div`
   width: 259px;
   height: 64px;
 
-  /* Neutrals/300
-
-Borders, Ghost UI, deactivated icons (over neutral-200)
-*/
   border: 1px solid #dae4f2;
   border-radius: 16px;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 `;
 
 export const LeftVectorContainer = styled.div`
@@ -213,21 +178,51 @@ export const LeftVectorContainer = styled.div`
   padding: 8px;
   gap: 10px;
 
-  /* Neutrals/200
-
-Deactivated elements, Clicked BG
-*/
   background: #e6edf7;
   border-radius: 8px;
-  transform: rotate(-180deg);
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 `;
 
 export const LeftVector = styled(Image)`
   transform: rotate(-180deg);
+`;
+export const RightVectorContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px;
+  gap: 10px;
+
+  background: #e6edf7;
+  border-radius: 8px;
+`;
+
+export const RightVector = styled(Image)`
+  transform: rotate(0deg);
+`;
+
+export const Pager = styled.div`
+  display: flex;
+  width: 99px;
+  gap: 5px;
+`;
+
+export const PageText = styled.p`
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 150%;
+  color: #7c899c;
+`;
+
+export const NumberText = styled.p`
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 18px;
+  line-height: 150%;
+  background: linear-gradient(102.47deg, #176feb -5.34%, #ff80ff 106.58%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 `;
