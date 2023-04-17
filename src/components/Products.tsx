@@ -10,7 +10,6 @@ type Props = {
 };
 
 const Products = ({ data }: Props) => {
-  console.log(data);
   return (
     <ProductSection>
       <ProductsHeader />

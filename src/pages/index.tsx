@@ -7,6 +7,7 @@ import Walkthrough from '@/components/Walkthrough';
 import Products from '@/components/Products';
 import { GetServerSideProps } from 'next';
 import { ProductsType } from '../../types';
+import Footer from '@/components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -29,6 +30,7 @@ export default function Home({ data }: Props) {
       <Hero />
       <Walkthrough />
       <Products data={data} />
+      {/* <Footer /> */}
     </AppContainer>
   );
 }

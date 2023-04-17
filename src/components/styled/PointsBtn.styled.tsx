@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const PointsBtn = styled.div`
-  box-sizing: border-box;
+export const PointsBtn = styled.button`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 8px 16px;
   gap: 16px;
+  cursor: pointer;
 
   width: 172px;
   height: 48px;
@@ -34,21 +34,5 @@ export const PointsBtn = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-
-    /* Inside auto layout */
-
-    flex: none;
-    flex-grow: 0;
   }
-
-  /* image {
-    position: absolute;
-    left: 18.75%;
-    right: 50%;
-    top: 62.5%;
-    bottom: -25%;
-
-    border: 2.5px solid #8fa3bf;
-    transform: rotate(-90deg);
-  } */
 `;

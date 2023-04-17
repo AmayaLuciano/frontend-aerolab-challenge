@@ -12,9 +12,9 @@ export const IlustrationContainer = styled.div`
 export const IlustrationImage = styled(Image)`
   position: absolute;
   right: 150px;
-  top: 23px;
+  top: 103px;
   width: 897px;
-  height: 825px;
+  height: 800px;
 `;
 
 export const IlustrationBg = styled.div`
