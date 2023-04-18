@@ -1,9 +1,8 @@
-import { ProductSection } from '@/components/styled/Products.styled';
-import React from 'react';
-import ProductsHeader from '@/components/ProductsHeader';
-import DisplayProducts from '@/components/DisplayProducts';
-import { GetServerSideProps } from 'next';
+'use client';
 import { ProductsType } from '../../types';
+import { ProductSection } from './styled/Products.styled';
+import ProductsHeader from './ProductsHeader';
+import DisplayProducts from './DisplayProducts';
 
 type Props = {
   data: ProductsType[];

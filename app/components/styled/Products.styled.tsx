@@ -137,6 +137,7 @@ export const SortBy = styled.div`
     align-items: center;
     padding: 8px 24px;
     gap: 10px;
+    cursor: pointer;
 
     width: 175px;
     height: 43px;

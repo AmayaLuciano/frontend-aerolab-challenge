@@ -1,4 +1,4 @@
-import React from 'react';
+'use client';
 import ilustration from '../../public/assets/illustrations/hero-desktop.png';
 import Image from 'next/image';
 import {

@@ -1,4 +1,4 @@
-import React from 'react';
+'use client';
 import { ProductsType } from '../../types';
 import {
   BtnText,

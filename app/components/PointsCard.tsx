@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+'use client';
 import {
   AmountContainer,
   BodyContainer,
@@ -21,9 +21,10 @@ import logo from '../../public/assets/icons/aeropay-3.svg';
 
 type Props = {
   displayCard: boolean;
+  name: string;
 };
 
-const PointsCard = ({ displayCard }: Props) => {
+const PointsCard = ({ displayCard, name }: Props) => {
   return (
     <CardContainer isDisplay={displayCard}>
       <Header>
@@ -37,7 +38,7 @@ const PointsCard = ({ displayCard }: Props) => {
               <Logo src={icon} alt="icon" />
             </CardHeader>
             <Data>
-              <Name>John Kite</Name>
+              <Name>{name}</Name>
               <Date>07/23</Date>
             </Data>
           </Card>
