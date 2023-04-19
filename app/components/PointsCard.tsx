@@ -12,7 +12,10 @@ import {
   Logo,
   Name,
   PointsContainer,
-  PointsBtn,
+  AddPointsBtn,
+  PointsBtn3,
+  PointsBtn1,
+  PointsBtn2,
 } from './styled/Header/UserCard.styled';
 
 import icon from '../../public/assets/icons/aeropay-2.svg';
@@ -20,6 +23,7 @@ import { Icon } from './styled/ProductsPage/ProductsSection.styled';
 import logo from '../../public/assets/icons/aeropay-3.svg';
 import { addPoints, fetchData } from '../utils/functions';
 import { useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
 
 type User = {
   createDate: string;
@@ -35,16 +39,21 @@ type Props = {
 };
 
 const PointsCard = ({ displayCard }: Props) => {
+  const [selected, setSelected] = useState<number>(0);
+  const [points, setPoints] = useState<7500 | 5000 | 1000 | 0>(0);
   const {
     data: user,
     isLoading,
     refetch,
   } = useQuery({
-    //      ^? const user: User
     queryKey: ['user'],
     queryFn: fetchData,
   });
 
+  const addPointsAndrefetch = async (points: number) => {
+    await addPoints(points);
+    refetch();
+  };
   return (
     <CardContainer isDisplay={displayCard}>
       <Header>
@@ -65,26 +74,43 @@ const PointsCard = ({ displayCard }: Props) => {
         </BodyContainer>
         <PointsContainer>
           <AmountContainer>
-            <div
+            <PointsBtn1
+              selected={selected}
               onClick={() => {
-                addPoints(1000);
-                refetch();
+                setSelected(1);
+                setPoints(1000);
               }}
             >
               <p>1000</p>
-            </div>
-            <div>
+            </PointsBtn1>
+            <PointsBtn2
+              selected={selected}
+              onClick={() => {
+                setSelected(2);
+                setPoints(5000);
+              }}
+            >
               <p>5000</p>
-            </div>
-            <div>
+            </PointsBtn2>
+            <PointsBtn3
+              selected={selected}
+              onClick={() => {
+                setSelected(3);
+                setPoints(7500);
+              }}
+            >
               <p>7500</p>
-            </div>
+            </PointsBtn3>
           </AmountContainer>
 
-          <PointsBtn>
+          <AddPointsBtn
+            onClick={() => {
+              addPointsAndrefetch(points);
+            }}
+          >
             <Icon src={logo} alt="icon" />
             <p>Add Points</p>
-          </PointsBtn>
+          </AddPointsBtn>
         </PointsContainer>
       </CardBody>
     </CardContainer>

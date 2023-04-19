@@ -167,38 +167,116 @@ export const AmountContainer = styled.div`
   flex-direction: row;
   align-items: flex-start;
   gap: 4px;
-
-  div {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    width: 85.33px;
-    height: 35px;
-
-    background: #e6f0ff;
-    border-radius: 12px;
-
-    p {
-      font-style: normal;
-      font-weight: lighter;
-      font-size: 18px;
-      line-height: 150%;
-
-      background: linear-gradient(102.47deg, #176feb -5.34%, #ff80ff 106.58%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-  }
 `;
+interface IPointsBtn {
+  selected: number;
+}
 
-export const PointsBtn = styled.div`
+export const PointsBtn1 = styled.div<IPointsBtn>`
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  width: 85.33px;
+  height: 35px;
+
+  background: ${(props) =>
+    props.selected !== 1
+      ? '#E6F0FF'
+      : 'linear-gradient(102.47deg, #176FEB -5.34%, #FF80FF 106.58%)'};
+  border-radius: 12px;
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+
+    /* background: linear-gradient(102.47deg, #176feb -5.34%, #ff80ff 106.58%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: white; */
+    ${({ selected }: IPointsBtn) =>
+      selected !== 1
+        ? `background: linear-gradient(102.47deg, #176feb -5.34%, #ff80ff 106.58%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        background-clip: text;`
+        : `color:white`}
+  }
+`;
+export const PointsBtn2 = styled.div<IPointsBtn>`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  width: 85.33px;
+  height: 35px;
+
+  background: ${(props) =>
+    props.selected !== 2
+      ? '#E6F0FF'
+      : 'linear-gradient(102.47deg, #176FEB -5.34%, #FF80FF 106.58%)'};
+  border-radius: 12px;
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+
+    ${({ selected }: IPointsBtn) =>
+      selected !== 2
+        ? `background: linear-gradient(102.47deg, #176feb -5.34%, #ff80ff 106.58%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        background-clip: text;`
+        : `color:white`}
+  }
+`;
+export const PointsBtn3 = styled.div<IPointsBtn>`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  width: 85.33px;
+  height: 35px;
+
+  background: ${(props) =>
+    props.selected !== 3
+      ? '#E6F0FF'
+      : 'linear-gradient(102.47deg, #176FEB -5.34%, #FF80FF 106.58%)'};
+  border-radius: 12px;
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 150%;
+
+    ${({ selected }: IPointsBtn) =>
+      selected !== 3
+        ? `background: linear-gradient(102.47deg, #176feb -5.34%, #ff80ff 106.58%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        background-clip: text;`
+        : `color:white`}
+  }
+`;
+
+export const AddPointsBtn = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
   gap: 8px;
 
