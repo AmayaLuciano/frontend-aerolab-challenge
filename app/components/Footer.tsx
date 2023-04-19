@@ -1,5 +1,3 @@
-'use client';
-
 type Props = {};
 
 const Footer = (props: Props) => {

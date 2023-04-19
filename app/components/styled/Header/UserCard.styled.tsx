@@ -7,13 +7,7 @@ type Props = {
 
 export const CardContainer = styled.div`
   ${({ isDisplay }: Props) =>
-    isDisplay === true
-      ? `
-    display:none
- `
-      : `
- display:block
- `};
+    isDisplay === true ? `display:none` : `display:block`};
   position: absolute;
   width: 312px;
   height: 404px;
@@ -45,7 +39,6 @@ export const Header = styled.div`
     width: 264px;
     height: 27px;
 
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -115,7 +108,6 @@ export const Brand = styled.p`
   width: 85px;
   height: 27px;
 
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: lighter;
   font-size: 18px;
@@ -138,7 +130,6 @@ export const Data = styled.div`
   align-items: center;
   padding: 0px;
   gap: 46px;
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: lighter;
   font-size: 14px;
@@ -190,7 +181,6 @@ export const AmountContainer = styled.div`
     border-radius: 12px;
 
     p {
-      font-family: 'Montserrat';
       font-style: normal;
       font-weight: lighter;
       font-size: 18px;
@@ -224,7 +214,6 @@ export const PointsBtn = styled.div`
     /* width: 102px;
     height: 27px; */
 
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: lighter;
     font-size: 18px;

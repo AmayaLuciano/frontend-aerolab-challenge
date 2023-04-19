@@ -1,4 +1,3 @@
-'use client';
 import {
   AmountContainer,
   BodyContainer,
@@ -15,16 +14,37 @@ import {
   PointsContainer,
   PointsBtn,
 } from './styled/Header/UserCard.styled';
+
 import icon from '../../public/assets/icons/aeropay-2.svg';
 import { Icon } from './styled/ProductsPage/ProductsSection.styled';
 import logo from '../../public/assets/icons/aeropay-3.svg';
+import { addPoints, fetchData } from '../utils/functions';
+import { useQuery } from '@tanstack/react-query';
+
+type User = {
+  createDate: string;
+  name: string;
+  points: number;
+  redeemHistory: [];
+  __v: number;
+  _id: string;
+};
 
 type Props = {
   displayCard: boolean;
-  name: string;
 };
 
-const PointsCard = ({ displayCard, name }: Props) => {
+const PointsCard = ({ displayCard }: Props) => {
+  const {
+    data: user,
+    isLoading,
+    refetch,
+  } = useQuery({
+    //      ^? const user: User
+    queryKey: ['user'],
+    queryFn: fetchData,
+  });
+
   return (
     <CardContainer isDisplay={displayCard}>
       <Header>
@@ -38,14 +58,19 @@ const PointsCard = ({ displayCard, name }: Props) => {
               <Logo src={icon} alt="icon" />
             </CardHeader>
             <Data>
-              <Name>{name}</Name>
+              <Name>{user?.name}</Name>
               <Date>07/23</Date>
             </Data>
           </Card>
         </BodyContainer>
         <PointsContainer>
           <AmountContainer>
-            <div>
+            <div
+              onClick={() => {
+                addPoints(1000);
+                refetch();
+              }}
+            >
               <p>1000</p>
             </div>
             <div>

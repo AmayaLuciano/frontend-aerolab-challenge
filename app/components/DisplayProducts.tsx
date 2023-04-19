@@ -1,4 +1,3 @@
-'use client';
 import { ProductsType } from '../../types';
 import {
   BtnText,
@@ -21,18 +20,36 @@ type Props = {
   data: ProductsType[];
 };
 
-const DisplayProducts = ({ data }: Props) => {
+const getProducts = async () => {
+  const res = await fetch('https://coding-challenge-api.aerolab.co/products', {
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json',
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ODQ2MDdiNWE0NTAwMjFiNWY1MDEiLCJpYXQiOjE2ODE0OTEwNDB9.M9Mdl9O9jqyO1Nxy0Jaw0rXoa_k07fo_hE7-Rv3eKvY`,
+    },
+  });
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+};
+
+const DisplayProducts = async (props: Props) => {
+  const data: ProductsType[] = await getProducts();
+
   return (
     <ProductsContainer>
-      {data?.map((p) => {
+      {data.map((p) => {
         return (
           <Card key={p._id}>
             <ProductCard>
               <ImageContainer>
                 <ProductImage
                   src={p.img.url}
-                  width={80}
-                  height={100}
+                  width={500}
+                  height={500}
                   alt="product"
                 />
               </ImageContainer>
@@ -53,6 +70,11 @@ const DisplayProducts = ({ data }: Props) => {
         );
       })}
     </ProductsContainer>
+    // <div>
+    //   {data.map((p) => {
+    //     return <p>{p.name}</p>;
+    //   })}
+    // </div>
   );
 };
 

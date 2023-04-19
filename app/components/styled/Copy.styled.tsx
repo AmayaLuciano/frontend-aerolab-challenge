@@ -8,7 +8,6 @@ export const Container = styled.div`
   margin-left: 87px;
   padding: 0px;
   gap: 64px;
-
   width: 602px;
   height: 577px;
   /* position: absolute;
@@ -34,7 +33,6 @@ export const CopyContainer = styled.div`
   align-items: flex-start;
   padding: 0px;
   gap: 8px;
-
   width: 602px;
   height: 355px;
 
@@ -51,7 +49,6 @@ export const Title = styled.p`
 
   /* Desktop/Text/L1/All Caps - 24% LS */
 
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
@@ -80,7 +77,6 @@ export const HeadingTop = styled.h2`
   margin-top: -20px;
   width: 602px;
   height: 320px;
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
   font-size: 200px;
@@ -94,7 +90,6 @@ export const HeadingTop = styled.h2`
 `;
 
 export const HeadingBottom = styled.h2`
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
   font-size: 200px;
@@ -109,7 +104,6 @@ export const Text = styled.div`
 
   /* Desktop/Text/L1/Default| */
 
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: lighter;
   font-size: 18px;
@@ -148,7 +142,6 @@ export const ButtonContainer = styled.div`
 `;
 
 export const Button = styled.p`
-  font-family: 'Montserrat';
   font-weight: lighter;
   font-size: 18px;
   text-transform: uppercase;

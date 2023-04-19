@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import styled from 'styled-components';
 
@@ -27,7 +28,6 @@ export const HeaderTitle = styled.div`
   width: 1464px;
   height: 142px;
 
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
   font-size: 33px;
@@ -44,7 +44,6 @@ export const HeaderLeft = styled.h2`
   margin-right: 15px;
 `;
 export const HeaderRight = styled.h2`
-  font-family: 'Montserrat';
   color: #252f3d;
 `;
 
@@ -79,7 +78,7 @@ export const FilterBy = styled.div`
   p {
     width: 81px;
     height: 27px;
-    font-family: 'Montserrat';
+
     font-style: normal;
     font-weight: lighter;
     font-size: 18px;
@@ -121,7 +120,6 @@ export const SortBy = styled.div`
     width: 71px;
     height: 27px;
 
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: lighter;
     font-size: 18px;
@@ -146,7 +144,6 @@ export const SortBy = styled.div`
     border-radius: 12px;
     border: none;
 
-    font-family: 'Montserrat';
     font-style: normal;
     font-weight: lighter;
     font-size: 17px;
@@ -208,7 +205,6 @@ export const Pager = styled.div`
 `;
 
 export const PageText = styled.p`
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: lighter;
   font-size: 18px;
@@ -217,7 +213,6 @@ export const PageText = styled.p`
 `;
 
 export const NumberText = styled.p`
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: lighter;
   font-size: 18px;

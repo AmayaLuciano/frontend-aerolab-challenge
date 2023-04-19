@@ -138,9 +138,6 @@ export const Title = styled.p`
   width: 201px;
   height: 32px;
 
-  /* Desktop/Headings/L3/Default */
-
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
   font-size: 32px;
@@ -159,7 +156,6 @@ export const Text = styled.p`
   height: 54px;
   margin-top: 5px;
 
-  font-family: 'Montserrat';
   font-style: normal;
   font-weight: lighter;
   font-size: 18px;

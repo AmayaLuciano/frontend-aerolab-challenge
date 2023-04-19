@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import styled from 'styled-components';
 
@@ -9,7 +10,6 @@ export const ProductsContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  font-family: 'Montserrat';
   display: flex;
   flex-direction: column;
   justify-content: center;
