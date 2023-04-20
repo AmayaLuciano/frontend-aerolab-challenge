@@ -1,5 +1,6 @@
 import Providers from './util/providers';
 import { Montserrat } from 'next/font/google';
+import './styles/global.css';
 
 export const metadata = {
   title: 'Create Next App',
