@@ -1,4 +1,3 @@
-import { ProductSection } from './styled/Products.styled';
 import ProductsHeader from './ProductsHeader';
 import DisplayProducts from './DisplayProducts';
 
@@ -8,11 +7,11 @@ type Props = {
 
 const Products = (props: Props) => {
   return (
-    <ProductSection>
+    <div className="mt-[280px] h-[2598px] w-full">
       <ProductsHeader />
       {/* @ts-expect-error Async Server Component */}
       <DisplayProducts />
-    </ProductSection>
+    </div>
   );
 };
 

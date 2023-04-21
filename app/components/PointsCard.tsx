@@ -1,5 +1,4 @@
 import icon from '../../public/assets/icons/aeropay-2.svg';
-import { Icon } from './styled/ProductsPage/ProductsSection.styled';
 import logo from '../../public/assets/icons/aeropay-3.svg';
 import { addPoints, fetchData } from '../utils/functions';
 import { useQuery } from '@tanstack/react-query';
@@ -130,7 +129,7 @@ const PointsCard = ({ displayCard }: Props) => {
               addPointsAndrefetch(points);
             }}
           >
-            <Icon src={logo} alt="icon" />
+            <Image src={logo} alt="icon" />
             <p className="text-lg text-white font-medium">Add Points</p>
           </div>
         </div>

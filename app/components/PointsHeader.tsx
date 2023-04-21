@@ -41,7 +41,7 @@ const PointsHeader = (props: Props) => {
     <>
       <button
         onClick={() => setDisplayCard(!displayCard)}
-        className="flex items-center px-[8px] py-[16px] gap-[16px] cursor-pointer w-[172px] h-[48px] bg-[#ffffff] border-[1px] border-[#dae4f2] rounded-2xl shadow-sm"
+        className="flex items-center px-[8px] py-[16px] gap-[16px] cursor-pointer w-[172px] h-[48px] bg-[#ffffff] border-[1px] border-[#dae4f2] rounded-2xl shadow-sm z-10"
       >
         <Image alt="icon" src={icon} width={32} height={32} />
         <p className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#176feb] to-[#ff80ff]">

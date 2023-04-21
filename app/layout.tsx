@@ -1,6 +1,7 @@
 import Providers from './util/providers';
 import { Montserrat } from 'next/font/google';
 import './styles/global.css';
+import { GlobalContextProvider } from './Context/store';
 
 export const metadata = {
   title: 'Create Next App',
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.className}>
       <body>
-        <Providers>{children}</Providers>
+        <GlobalContextProvider>
+          <Providers>{children}</Providers>
+        </GlobalContextProvider>
       </body>
     </html>
   );
