@@ -9,8 +9,12 @@ export default function Home() {
       {/* @ts-expect-error Server Component */}
 
       <Header />
+
       <Hero />
+
       <Walkthrough />
+
+      {/* @ts-expect-error Async Server Component */}
       <Products />
     </>
     //  <Footer />

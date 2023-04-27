@@ -9,7 +9,12 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      backgroundImage: {
+        'wave-pattern': "url('/public/assets/illustrations/single-wave-pattern.svg')"
+
+      }
+    }
   },
   plugins: []
 }

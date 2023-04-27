@@ -1,72 +1,104 @@
+'use client';
 import { ProductsType } from '../../types';
 
 import icon from '../../public/assets/icons/aeropay-3.svg';
 import Image from 'next/image';
+import { useQuery } from '@tanstack/react-query';
+import { fetchData, getProducts } from '../utils/functions';
+import Product from './Product';
+import { useGlobalContext } from '../Context/store';
+import { useState } from 'react';
+import vector from '../../public/assets/icons/chevron-active.svg';
 
-type Props = {};
+// type Props = {
+//   data: ProductsType[];
+// };
 
-const getProducts = async () => {
-  const res = await fetch('https://coding-challenge-api.aerolab.co/products', {
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ODQ2MDdiNWE0NTAwMjFiNWY1MDEiLCJpYXQiOjE2ODE0OTEwNDB9.M9Mdl9O9jqyO1Nxy0Jaw0rXoa_k07fo_hE7-Rv3eKvY`,
-    },
+const DisplayProducts = () => {
+  const { pageNumber, setPageNumber } = useGlobalContext();
+
+  const { data } = useQuery({
+    queryKey: ['products', pageNumber],
+    queryFn: () => getProducts(),
   });
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
-  }
 
-  return res.json();
-};
+  const { order } = useGlobalContext();
 
-const DisplayProducts = async (props: Props) => {
-  const data: ProductsType[] = await getProducts();
+  const highestPrice = () => {
+    const sortedArray = [...data];
+    sortedArray?.sort((a: ProductsType, b: ProductsType) => b.cost - a.cost);
+    if (pageNumber === 1) {
+      const page1 = sortedArray?.slice(0, 16);
+      return page1?.map((p: ProductsType) => {
+        return <Product key={p._id} p={p} />;
+      });
+    } else {
+      const page2 = sortedArray?.slice(16, 32);
+      return page2?.map((p: ProductsType) => {
+        return <Product key={p._id} p={p} />;
+      });
+    }
+  };
+  const lowestPrice = () => {
+    const sortedArray = [...data];
+    sortedArray?.sort((a: ProductsType, b: ProductsType) => a.cost - b.cost);
+
+    if (pageNumber === 1) {
+      const page1 = sortedArray?.slice(0, 16);
+      return page1?.map((p: ProductsType) => {
+        return <Product key={p._id} p={p} />;
+      });
+    } else {
+      const page2 = sortedArray?.slice(16, 32);
+      return page2?.map((p: ProductsType) => {
+        return <Product key={p._id} p={p} />;
+      });
+    }
+  };
+
+  const mostRecent = () => {
+    if (pageNumber === 1) {
+      const page1 = data?.slice(0, 16);
+      return page1?.map((p: ProductsType) => {
+        return <Product key={p._id} p={p} />;
+      });
+    } else {
+      const page2 = data?.slice(16, 32);
+      return page2?.map((p: ProductsType) => {
+        return <Product key={p._id} p={p} />;
+      });
+    }
+  };
 
   return (
-    <>
-      <div className="grid grid-cols-4 w-[1464px] m-auto">
-        {data.map((p) => {
-          return (
-            <div
-              className="flex-col justify-center items-center mb-[80px] w-[348px] h-[506px]"
-              key={p._id}
-            >
-              <div className="h-[431px] ">
-                <div className="box-border flex items-center justify-center w-[348px] h-[345px] bg-white border-[1px] border-[#dae4f2] rounded-t-2xl">
-                  <Image
-                    src={p.img.url}
-                    width={300}
-                    height={300}
-                    alt="product"
-                  />
-                </div>
-                <div className="box-border flex-col border-[1px] border-[#dae4f2] rounded-b-2xl border-t-0 h-[88px] bg-white pl-4 pt-4">
-                  <p className="text-[#252f3d] text-lg font-medium">{p.name}</p>
-                  <p className="text-sm text-[#7c899c] uppercase">
-                    {p.category}
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex p-4 justify-center items-center rounded-2xl mt-4 gap-2 bg-gradient-to-r from-[#176feb] to-[#ff80ff] cursor-pointer">
-                <p className="text-white text-lg">Redeem for</p>
-                <div className="flex justify-center items-center gap-2 leading-7">
-                  <Image
-                    className=""
-                    width={24}
-                    height={24}
-                    src={icon}
-                    alt="icon"
-                  />
-                  <p className="text-lg text-white">{p.cost}</p>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+    <div className="hidden xl:block">
+      <div className="hidden xl:grid justify-center xl:grid-cols-4 xl:w-[1464px] m-auto mt-8 xl:mt-0">
+        {order === 'Highest price' && highestPrice()}
+        {order === 'Lowest price' && lowestPrice()}
+        {order === 'Most recent' && mostRecent()}
       </div>
-    </>
+
+      <div className="xl:hidden flex justify-between items-center border-[1px] border-[#dae4f2] rounded-2xl px-4 py-3 w-[310px] mx-auto">
+        <div
+          className="p-2  bg-[#e6edf7] rounded-lg cursor-pointer"
+          onClick={() => setPageNumber(1)}
+        >
+          <Image className="rotate-180" src={vector} alt="vector" />
+        </div>
+        <div className="flex font-medium">
+          <p className="text-[#7c899c] text-lg mr-2">Page</p>
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#176feb] to-[#ff80ff] text-lg">
+            {pageNumber} of 2
+          </p>
+        </div>
+        <div
+          className="p-2  bg-[#e6edf7] rounded-lg cursor-pointer"
+          onClick={() => setPageNumber(2)}
+        >
+          <Image src={vector} alt="vector" />
+        </div>
+      </div>
+    </div>
   );
 };
 

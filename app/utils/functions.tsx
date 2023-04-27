@@ -42,3 +42,25 @@ export const getProducts = async () => {
 
   return res.json();
 };
+
+export const redeemProduct = async (id: string) => {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ODQ2MDdiNWE0NTAwMjFiNWY1MDEiLCJpYXQiOjE2ODE0OTEwNDB9.M9Mdl9O9jqyO1Nxy0Jaw0rXoa_k07fo_hE7-Rv3eKvY`,
+    },
+    body: JSON.stringify({ productId: id }),
+  };
+
+  const res = await fetch(
+    'https://coding-challenge-api.aerolab.co/redeem',
+    requestOptions
+  );
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+  fetchData();
+
+  return res.json();
+};

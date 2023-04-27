@@ -1,9 +1,24 @@
-'use client';
+import { dehydrate, Hydrate } from '@tanstack/react-query';
+import getQueryClient from './getQueryClient';
+import { getProducts } from '../utils/functions';
+import DisplayProducts from '../components/DisplayProducts';
+import { ProductsType } from '@/types';
+import MDisplayProducts from '../components/Mobile/MDisplayProducts';
 
-import { Hydrate as RQHydrate, HydrateProps } from '@tanstack/react-query';
+// type Props = {
+//   data: ProductsType[];
+// };
 
-function Hydrate(props: HydrateProps) {
-  return <RQHydrate {...props} />;
+export default async function HydratedProducts() {
+  const queryClient = getQueryClient();
+  await queryClient.prefetchQuery(['products'], getProducts);
+  const dehydratedState = dehydrate(queryClient);
+
+  return (
+    <Hydrate state={dehydratedState}>
+      <DisplayProducts />
+
+      <MDisplayProducts />
+    </Hydrate>
+  );
 }
-
-export default Hydrate;
