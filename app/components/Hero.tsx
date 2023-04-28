@@ -9,8 +9,8 @@ type Props = {};
 
 const Hero = (props: Props) => {
   return (
-    <div className="overflow-hidden flex-col mt-8 justify-center items-center text-center xl:flex-row xl:justify-between xl:mx-[141px] xl:mt-[112px] ">
-      <div className="bg-[url('../../public/assets/illustrations/single-wave-pattern.svg')] h-[600px] bg-repeat w-full">
+    <div className="overflow-hidden flex-col mt-8 justify-center items-center text-center xl:flex-row xl:justify-between xl:mx-[141px] xl:mt-[112px] lg:h-[800px]">
+      <div className="bg-[url('../../public/assets/illustrations/single-wave-pattern.svg')] h-full bg-repeat w-full">
         <div className="flex-col xl:items-start  xl:gap-6 xl:ml-[87px] xl:w-[602px] xl:h-[433px]">
           <div className="flex-col text-center xl:items-start xl:gap-2 xl:w-[602px] xl:h-[355]">
             <p className="uppercase text-[#7c899c] font-semibold text-lg tracking-wide ">
@@ -45,10 +45,10 @@ const Hero = (props: Props) => {
           </Link>
         </div>
 
-        <div className="  xl:w-[897px] xl:h-[795px] mt-32 xl:mt-0   ">
+        <div className="  xl:w-[897px] xl:h-[795px] mt-32 xl:mt-0   hidden xl:block">
           <div className="hidden xl:w-[772px] xl:h-[600px] bg-gradient-to-r from-[rgba(23,111,235,0.5)] to-[rgba(255,128,255,0.5)] rounded-[104px] xl:ml-10" />
           <Image
-            className="xl:absolute xl:right-[220px] xl:top-[10px]  hidden sm:block"
+            className="xl:absolute xl:right-[220px] xl:top-[10px]  hidden xl:block"
             width={830}
             height={790}
             src={ilustration}

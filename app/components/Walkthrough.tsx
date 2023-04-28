@@ -6,6 +6,7 @@ import icon2 from '../../public/assets/icons/walkthrough-2.svg';
 import icon3 from '../../public/assets/icons/walkthrough-3.svg';
 import Image from 'next/image';
 import MWalkthrough from './Mobile/MWalkthrough';
+import TWalkthrough from './Mobile/TWalkthrough';
 
 type Props = {};
 
@@ -102,6 +103,7 @@ const Walkthrough = (props: Props) => {
         </div>
       </div>
       <MWalkthrough />
+      <TWalkthrough />
     </>
   );
 };
