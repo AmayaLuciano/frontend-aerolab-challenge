@@ -16,18 +16,18 @@ type User = {
 };
 const Header = async (props: Props) => {
   return (
-    <div className="px-5 py-10 xl:ml-[228px] xl:mr-[228px] flex flex-row justify-between xl:py-[40px] items-center">
+    <div className="px-5 py-10 lg:w-[985px] lg:mx-auto xl:ml-[228px] xl:mr-[228px] flex flex-row justify-between xl:py-[40px] items-center ">
       <div>
         <Image
-          className="sm:hidden"
+          className="xl:hidden"
           alt="logo"
           src={logoMobile}
           width={50}
           height={50}
         />
-      </div>
-      <div className="hidden sm:block">
-        <Image alt="logo" src={logo} width={100} height={100} />
+        <div className="hidden xl:block">
+          <Image alt="logo" src={logo} width={100} height={100} />
+        </div>
       </div>
       <PointsHeader />
     </div>

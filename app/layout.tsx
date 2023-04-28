@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={montserrat.className}>
+    <html lang="en" className={`${montserrat.className} scroll-smooth`}>
       <body>
         <GlobalContextProvider>
           <Providers>{children}</Providers>

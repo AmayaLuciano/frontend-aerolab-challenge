@@ -20,9 +20,3 @@ export default function Home() {
     //  <Footer />
   );
 }
-
-const headers = {
-  'Content-Type': 'application/json',
-  Accept: 'application/json',
-  Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDM5ODQ2MDdiNWE0NTAwMjFiNWY1MDEiLCJpYXQiOjE2ODE0OTEwNDB9.M9Mdl9O9jqyO1Nxy0Jaw0rXoa_k07fo_hE7-Rv3eKvY`,
-};

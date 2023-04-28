@@ -1,5 +1,6 @@
 'use client';
 
+import { ProductsType } from '@/types';
 import {
   createContext,
   useContext,
@@ -39,6 +40,8 @@ interface ContextProps {
       | 'Gaming'
     >
   >;
+  products: ProductsType[];
+  setProducts: Dispatch<SetStateAction<ProductsType[]>>;
 }
 
 const GlobalContext = createContext<ContextProps>({
@@ -74,6 +77,8 @@ const GlobalContext = createContext<ContextProps>({
     'Phone Accessories' ||
     'Monitors & TV' ||
     'Gaming',
+  products: [],
+  setProducts: (): ProductsType[] => [],
 });
 
 export const GlobalContextProvider = ({ children }: any) => {
@@ -96,7 +101,7 @@ export const GlobalContextProvider = ({ children }: any) => {
     | 'Monitors & TV'
     | 'Gaming'
   >('All Products');
-
+  const [products, setProducts] = useState<ProductsType[]>([]);
   return (
     <GlobalContext.Provider
       value={{
@@ -110,6 +115,8 @@ export const GlobalContextProvider = ({ children }: any) => {
         setMPageNumber,
         category,
         setCategory,
+        products,
+        setProducts,
       }}
     >
       {children}

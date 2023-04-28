@@ -3,13 +3,14 @@ import ilustration from '../../public/assets/illustrations/hero-desktop.png';
 import Image from 'next/image';
 import vector from '../../public/assets/icons/Icons.svg';
 import wave from '../../public/assets/illustrations/single-wave-pattern.svg';
+import Link from 'next/link';
 
 type Props = {};
 
 const Hero = (props: Props) => {
   return (
     <div className="overflow-hidden flex-col mt-8 justify-center items-center text-center xl:flex-row xl:justify-between xl:mx-[141px] xl:mt-[112px] ">
-      <div className="bg-[url('../../public/assets/illustrations/single-wave-pattern.svg')] h-[600px] bg-repeat-y">
+      <div className="bg-[url('../../public/assets/illustrations/single-wave-pattern.svg')] h-[600px] bg-repeat w-full">
         <div className="flex-col xl:items-start  xl:gap-6 xl:ml-[87px] xl:w-[602px] xl:h-[433px]">
           <div className="flex-col text-center xl:items-start xl:gap-2 xl:w-[602px] xl:h-[355]">
             <p className="uppercase text-[#7c899c] font-semibold text-lg tracking-wide ">
@@ -24,22 +25,24 @@ const Hero = (props: Props) => {
               </h2>
             </div>
           </div>
-          <div className="text-[#7c899c] mx-6 font-medium xl:mt-[-50px] xl:w-[523px]">
+          <div className="text-[#7c899c] lg:w-[289px] lg:mx-auto mx-6 font-base xl:mt-[-50px] xl:w-[523px]">
             Here you’ll be able to exchange all of your hard-earned Aeropoints
             and exchange them for cool tech.
           </div>
-          <div className="flex text-center  justify-center items-center bg-gradient-to-r from-[#176feb] to-[#ff80ff] rounded-3xl h-[80px] mx-9 mt-14  cursor-pointer">
-            <p className="font-medium uppercase text-white ">
-              view all products
-            </p>
-            <Image
-              className="ml-2"
-              width={30}
-              height={30}
-              src={vector}
-              alt="vector"
-            />
-          </div>
+          <Link href={'/#products'}>
+            <div className="flex text-center  justify-center items-center lg:w-[303px] lg:mx-auto bg-gradient-to-r from-[#176feb] to-[#ff80ff] rounded-full h-[80px] mx-9 mt-14  cursor-pointer">
+              <p className="font-medium uppercase text-white ">
+                view all products
+              </p>
+              <Image
+                className="ml-2"
+                width={30}
+                height={30}
+                src={vector}
+                alt="vector"
+              />
+            </div>
+          </Link>
         </div>
 
         <div className="  xl:w-[897px] xl:h-[795px] mt-32 xl:mt-0   ">
