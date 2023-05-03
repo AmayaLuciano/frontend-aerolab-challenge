@@ -38,7 +38,7 @@ const PointsCard = ({ displayCard }: Props) => {
     <div
       className={`${
         displayCard === true ? `hidden` : `block`
-      } absolute w-[312px] h-[404px] top-24 right-5 xl:right-[220px] xl:top-[104px] bg-[#ffffff]  z-10 shadow-2xl border-[1px] border-[#dae4f2] rounded-2xl`}
+      } absolute w-[312px] h-[404px] top-14 right-0 lg:right-0 xl:right-0  bg-[#ffffff]  z-10 shadow-2xl border-[1px] border-[#dae4f2] rounded-2xl`}
     >
       <div className="flex flex-col items-start justify-center p-4 gap-[10px] h-[59px] border-b-[1px] border-[#dae4f2]">
         <p className="text-[#252f3d] font-semibold">Add Balance</p>

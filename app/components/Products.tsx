@@ -12,7 +12,10 @@ type Props = {
 const Products = async (props: Props) => {
   const data: ProductsType[] = await getProducts();
   return (
-    <div id="products" className="xl:mt-[280px] xl:h-[2598px] w-full">
+    <div
+      id="products"
+      className=" xl:h-[2598px] w-full px-5 lg:max-w-[1024px] mx-auto 2xl:max-w-[1500px]"
+    >
       <ProductsHeader />
       {/* @ts-expect-error Server Component */}
       <HydratedProducts />

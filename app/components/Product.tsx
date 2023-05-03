@@ -21,11 +21,11 @@ const Product = ({ p }: Props) => {
   };
   return (
     <div
-      className="flex-col justify-center items-center mb-[80px] w-[348px] h-[506px]"
+      className="flex-col justify-center items-center mb-[80px] lg:w-[311px] 2xl:w-[348px] 2xl:h-[506px] mx-auto"
       key={p._id}
     >
       <div className="h-[431px] ">
-        <div className="box-border flex items-center justify-center w-[348px] h-[345px] bg-white border-[1px] border-[#dae4f2] rounded-t-2xl">
+        <div className="box-border flex items-center justify-center lg:w-[311px] 2xl:w-[348px] h-[345px] bg-white border-[1px] border-[#dae4f2] rounded-t-2xl">
           <Image src={p.img.url} width={300} height={300} alt="product" />
         </div>
         <div className="box-border flex-col border-[1px] border-[#dae4f2] rounded-b-2xl border-t-0 h-[88px] bg-white pl-4 pt-4">

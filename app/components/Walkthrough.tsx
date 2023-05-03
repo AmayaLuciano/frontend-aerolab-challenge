@@ -13,7 +13,7 @@ type Props = {};
 const Walkthrough = (props: Props) => {
   return (
     <>
-      <div className="hidden xl:flex justify-center h-[528px] w-full bg-gradient-to-r from-[rgba(23,111,235,0.5)] to-[rgba(255,128,255,0.5)] ">
+      <div className="hidden 2xl:flex justify-center h-[528px] max-w-full bg-gradient-to-r from-[rgba(23,111,235,0.5)] to-[rgba(255,128,255,0.5)] ">
         <div className="p-3 mt-[-92px] shadow-sm rounded-[32px] rotate-[-3deg]">
           <div className="box-border w-[532px] h-[676px] p-3 border-[1px] border-[#dae4f2] rounded-[32px] bg-white">
             <Image

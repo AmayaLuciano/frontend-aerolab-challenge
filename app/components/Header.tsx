@@ -16,7 +16,7 @@ type User = {
 };
 const Header = async (props: Props) => {
   return (
-    <div className="px-5 py-10 lg:w-[985px] lg:mx-auto xl:ml-[228px] xl:mr-[228px] flex flex-row justify-between xl:py-[40px] items-center ">
+    <div className="px-5 2xl:px-0 py-10 lg:w-[985px] lg:mx-auto xl:w-full  flex flex-row justify-between xl:py-[40px]   items-center  2xl:max-w-[1464px] 2xl:mx-auto">
       <div>
         <Image
           className="xl:hidden"

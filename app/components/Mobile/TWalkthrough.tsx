@@ -12,7 +12,7 @@ type Props = {};
 
 const TWalkthrough = (props: Props) => {
   return (
-    <div className="bg-[url('../../public/assets/illustrations/single-wave-pattern.svg')]  bg-repeat w-full">
+    <div className="hidden lg:block 2xl:hidden bg-[url('../../public/assets/illustrations/single-wave-pattern.svg')] h-[650px] bg-repeat w-full">
       <div className=" hidden lg:block h-[656px] bg-gradient-to-r from-[rgba(23,111,235,0.5)] to-[rgba(255,128,255,0.5)] z-0 ">
         <div className="relative  mx-auto  bg-black w-[580px]">
           <Image
@@ -24,7 +24,7 @@ const TWalkthrough = (props: Props) => {
           />
         </div>
       </div>
-      <div className=" absolute top-[1120px] mx-auto flex justify-between w-[1024px] ">
+      <div className=" relative top-[-500px]  flex justify-between w-full ">
         <div className="  p-3 rounded-[32px] w-[323px] h-[447px]  bg-white/60 z-20 mx-auto">
           <div className="overflow-hidden w-[299px] h-[290px] bg-gradient-to-r from-[#7296eb] to-[#eac0e9] rounded-t-3xl">
             <Image className="mt-[-30px]" src={card1} alt="card" />

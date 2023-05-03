@@ -38,7 +38,7 @@ const PointsHeader = (props: Props) => {
     );
   }
   return (
-    <>
+    <div className="relative">
       <button
         onClick={() => setDisplayCard(!displayCard)}
         className="flex items-center px-[8px] py-[16px] gap-[16px] cursor-pointer w-[172px] h-[48px] bg-[#ffffff] border-[1px] border-[#dae4f2] rounded-2xl shadow-sm z-10"
@@ -50,7 +50,7 @@ const PointsHeader = (props: Props) => {
         <Image className="rotate-90" src={row} alt="row" />
       </button>
       <PointsCard displayCard={displayCard} />
-    </>
+    </div>
   );
 };
 
