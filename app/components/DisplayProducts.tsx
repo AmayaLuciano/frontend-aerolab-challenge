@@ -1,24 +1,19 @@
 'use client';
 import { ProductsType } from '../../types';
 
-import icon from '../../public/assets/icons/aeropay-3.svg';
 import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
-import { fetchData, getProducts } from '../utils/functions';
+import { getProducts } from '../utils/functions';
 import Product from './Product';
 import { useGlobalContext } from '../Context/store';
-import { useState } from 'react';
-import vector from '../../public/assets/icons/chevron-active.svg';
 
-// type Props = {
-//   data: ProductsType[];
-// };
+import vector from '../../public/assets/icons/chevron-active.svg';
+import LoadingProduct from './LoadingProduct';
 
 const DisplayProducts = () => {
-  const { pageNumber, setPageNumber, category, products, setProducts } =
-    useGlobalContext();
+  const { pageNumber, setPageNumber, category } = useGlobalContext();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['products', pageNumber],
     queryFn: () => getProducts(),
   });
@@ -137,8 +132,16 @@ const DisplayProducts = () => {
     }
   };
 
+  const loader = Array.from({ length: 16 }, (_, index) => {
+    return <LoadingProduct key={index} />;
+  });
+
   return (
     <div className="hidden 2xl:block">
+      {category === 'All Products' && isLoading ? (
+        <div className="grid grid-cols-4">{loader}</div>
+      ) : null}
+
       <div className="hidden 2xl:grid justify-center xl:grid-cols-4 xl:w-[1464px] m-auto mt-8 xl:mt-0">
         {order === 'Highest price' && highestPrice()}
         {order === 'Lowest price' && lowestPrice()}
