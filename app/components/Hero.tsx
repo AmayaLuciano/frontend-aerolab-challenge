@@ -2,7 +2,6 @@
 import ilustration from '../../public/assets/illustrations/hero-modified.png';
 import Image from 'next/image';
 import vector from '../../public/assets/icons/Icons.svg';
-import wave from '../../public/assets/illustrations/single-wave-pattern.svg';
 import Link from 'next/link';
 
 type Props = {};

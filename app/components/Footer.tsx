@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import Github from '../../public/assets/icons/github-default.svg';
 
 type Props = {};

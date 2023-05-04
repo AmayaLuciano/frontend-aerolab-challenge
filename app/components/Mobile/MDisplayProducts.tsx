@@ -1,19 +1,13 @@
 'use client';
 import { ProductsType } from '../../../types';
 
-import icon from '../../public/assets/icons/aeropay-3.svg';
 import Image from 'next/image';
 import { useQuery } from '@tanstack/react-query';
 import { getProducts } from '../../utils/functions';
 import Product from '../Product';
 import { useGlobalContext } from '../../Context/store';
-import { useState } from 'react';
 import vector from '../../../public/assets/icons/chevron-active.svg';
 import LoadingProduct from '../LoadingProduct';
-
-// type Props = {
-//   data: ProductsType[];
-// };
 
 const MDisplayProducts = () => {
   const { MpageNumber, setMPageNumber, category, products, setProducts } =
