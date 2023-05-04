@@ -2,7 +2,6 @@ import ProductsHeader from './ProductsHeader';
 import DisplayProducts from './DisplayProducts';
 import { getProducts } from '../utils/functions';
 import { ProductsType } from '@/types';
-import { Hydrate } from '@tanstack/react-query';
 import HydratedProducts from '../util/HydrateClient';
 
 type Props = {
