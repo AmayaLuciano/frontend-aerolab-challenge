@@ -42,6 +42,8 @@ interface ContextProps {
   >;
   products: ProductsType[];
   setProducts: Dispatch<SetStateAction<ProductsType[]>>;
+  isRedeeming: boolean;
+  setIsRedeeming: Dispatch<SetStateAction<boolean>>;
 }
 
 const GlobalContext = createContext<ContextProps>({
@@ -79,6 +81,8 @@ const GlobalContext = createContext<ContextProps>({
     'Gaming',
   products: [],
   setProducts: (): ProductsType[] => [],
+  isRedeeming: false || true,
+  setIsRedeeming: () => false || true,
 });
 
 export const GlobalContextProvider = ({ children }: any) => {
@@ -102,6 +106,7 @@ export const GlobalContextProvider = ({ children }: any) => {
     | 'Gaming'
   >('All Products');
   const [products, setProducts] = useState<ProductsType[]>([]);
+  const [isRedeeming, setIsRedeeming] = useState<boolean>(false);
   return (
     <GlobalContext.Provider
       value={{
@@ -117,6 +122,8 @@ export const GlobalContextProvider = ({ children }: any) => {
         setCategory,
         products,
         setProducts,
+        isRedeeming,
+        setIsRedeeming,
       }}
     >
       {children}

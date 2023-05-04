@@ -10,6 +10,7 @@ import { useGlobalContext } from '../../Context/store';
 import { useState } from 'react';
 import vector from '../../../public/assets/icons/chevron-active.svg';
 import TPagination from './TPagination';
+import LoadingProduct from '../LoadingProduct';
 
 // type Props = {
 //   data: ProductsType[];
@@ -19,7 +20,7 @@ const TDisplayProducts = () => {
   const { MpageNumber, setMPageNumber, category, products, setProducts } =
     useGlobalContext();
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ['products', MpageNumber],
     queryFn: () => getProducts(),
   });
@@ -162,9 +163,15 @@ const TDisplayProducts = () => {
       }
     }
   };
+
+  const loader = Array.from({ length: 12 }, (_, index) => {
+    return <LoadingProduct key={index} />;
+  });
   return (
     <>
       <div className="hidden 2xl:hidden lg:grid lg:grid-cols-3 lg:justify-center lg:items-center max-w-[1024px] mx-auto mt-8  ">
+        {category === 'All Products' && isLoading ? <>{loader}</> : null}
+
         {order === 'Highest price' && MhighestPrice()}
         {order === 'Most recent' && MmostRecent()}
         {order === 'Lowest price' && MlowestPrice()}

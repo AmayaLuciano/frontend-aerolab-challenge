@@ -40,169 +40,179 @@ const ProductsHeader = (props: Props) => {
             <p className="w-[81px] h-[27px] text-lg text-[#7c899c] font-light">
               Filter by:
             </p>
-            <button
-              onClick={() => setDisplay(!display)}
-              className="flex justify-between items-center w-[335px] mt-8 2xl:mt-0 2xl:w-[256px] border-[1px] border-[#dae4f2] rounded-2xl p-4"
-            >
-              <p className="text-[#7c899c]">{category}</p>
-              {display ? (
-                <svg
-                  className="transition-transform"
-                  width="15px"
-                  height="15px"
-                  strokeWidth="3"
-                  viewBox="0 0 24 24"
-                  fill="yes"
-                  xmlns="http://www.w3.org/2000/svg"
-                  color="#000000"
-                >
-                  <path
-                    d="M3.685 18.783l7.88-14.008a.5.5 0 01.87 0l7.88 14.008a.5.5 0 01-.617.71l-7.517-2.922a.5.5 0 00-.362 0l-7.517 2.923a.5.5 0 01-.617-.711z"
-                    stroke="#000000"
+            <div className="relative">
+              <button
+                onClick={() => setDisplay(!display)}
+                className="flex justify-between items-center w-[335px] mt-8 2xl:mt-0 2xl:w-[256px] border-[1px] border-[#dae4f2] rounded-2xl p-4"
+              >
+                <p className="text-[#7c899c]">{category}</p>
+                {display ? (
+                  <svg
+                    className="transition-transform"
+                    width="15px"
+                    height="15px"
                     strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-              ) : (
-                <svg
-                  className="rotate-180 transition-transform"
-                  width="15px"
-                  height="15px"
-                  strokeWidth="3"
-                  viewBox="0 0 24 24"
-                  fill="yes"
-                  xmlns="http://www.w3.org/2000/svg"
-                  color="#000000"
-                >
-                  <path
-                    d="M3.685 18.783l7.88-14.008a.5.5 0 01.87 0l7.88 14.008a.5.5 0 01-.617.71l-7.517-2.922a.5.5 0 00-.362 0l-7.517 2.923a.5.5 0 01-.617-.711z"
-                    stroke="#000000"
+                    viewBox="0 0 24 24"
+                    fill="yes"
+                    xmlns="http://www.w3.org/2000/svg"
+                    color="#000000"
+                  >
+                    <path
+                      d="M3.685 18.783l7.88-14.008a.5.5 0 01.87 0l7.88 14.008a.5.5 0 01-.617.71l-7.517-2.922a.5.5 0 00-.362 0l-7.517 2.923a.5.5 0 01-.617-.711z"
+                      stroke="#000000"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                ) : (
+                  <svg
+                    className="rotate-180 transition-transform"
+                    width="15px"
+                    height="15px"
                     strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></path>
-                </svg>
-              )}
-            </button>
-            {display && (
-              <div className="absolute flex-col top-[2160px] ml-2  bg-white w-[330px] rounded-2xl  border-[1px] border-[#dae4f2] z-10">
-                <p
-                  onClick={() => {
-                    setCategory('All Products'),
-                      setDisplay(false),
-                      setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF] rounded-t-2xl"
-                >
-                  All products
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory('Audio'), setDisplay(false), setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]"
-                >
-                  Audio
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory('Cameras'),
-                      setDisplay(false),
-                      setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]"
-                >
-                  Cameras
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory('Drones'), setDisplay(false), setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]"
-                >
-                  Drones
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory('Gaming'), setDisplay(false), setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
-                >
-                  Gaming
-                </p>
+                    viewBox="0 0 24 24"
+                    fill="yes"
+                    xmlns="http://www.w3.org/2000/svg"
+                    color="#000000"
+                  >
+                    <path
+                      d="M3.685 18.783l7.88-14.008a.5.5 0 01.87 0l7.88 14.008a.5.5 0 01-.617.71l-7.517-2.922a.5.5 0 00-.362 0l-7.517 2.923a.5.5 0 01-.617-.711z"
+                      stroke="#000000"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    ></path>
+                  </svg>
+                )}
+              </button>
+              {display && (
+                <div className="absolute flex-col top-[70px]   bg-white w-[250px] rounded-2xl  border-[1px] border-[#dae4f2] z-10">
+                  <p
+                    onClick={() => {
+                      setCategory('All Products'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF] rounded-t-2xl"
+                  >
+                    All products
+                  </p>
+                  <p
+                    onClick={() => {
+                      setCategory('Audio'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]"
+                  >
+                    Audio
+                  </p>
+                  <p
+                    onClick={() => {
+                      setCategory('Cameras'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]"
+                  >
+                    Cameras
+                  </p>
+                  <p
+                    onClick={() => {
+                      setCategory('Drones'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]"
+                  >
+                    Drones
+                  </p>
+                  <p
+                    onClick={() => {
+                      setCategory('Gaming'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
+                  >
+                    Gaming
+                  </p>
 
-                <p
-                  onClick={() => {
-                    setCategory('Laptops'),
-                      setDisplay(false),
-                      setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
-                >
-                  Laptops
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory('Monitors & TV'),
-                      setDisplay(false),
-                      setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
-                >
-                  Monitors & TV
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory('Phone Accessories'),
-                      setDisplay(false),
-                      setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
-                >
-                  Phone Accessories
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory('Phones'), setDisplay(false), setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
-                >
-                  Phones
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory('Smart Home'),
-                      setDisplay(false),
-                      setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
-                >
-                  Smart Home
-                </p>
-                <p
-                  onClick={() => {
-                    setCategory('Tablets & E-readers'),
-                      setDisplay(false),
-                      setMPageNumber(1);
-                    setPageNumber(1);
-                  }}
-                  className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
-                >
-                  Tablets & E-readers
-                </p>
-              </div>
-            )}
+                  <p
+                    onClick={() => {
+                      setCategory('Laptops'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
+                  >
+                    Laptops
+                  </p>
+                  <p
+                    onClick={() => {
+                      setCategory('Monitors & TV'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
+                  >
+                    Monitors & TV
+                  </p>
+                  <p
+                    onClick={() => {
+                      setCategory('Phone Accessories'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
+                  >
+                    Phone Accessories
+                  </p>
+                  <p
+                    onClick={() => {
+                      setCategory('Phones'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
+                  >
+                    Phones
+                  </p>
+                  <p
+                    onClick={() => {
+                      setCategory('Smart Home'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
+                  >
+                    Smart Home
+                  </p>
+                  <p
+                    onClick={() => {
+                      setCategory('Tablets & E-readers'),
+                        setDisplay(false),
+                        setMPageNumber(1);
+                      setPageNumber(1);
+                    }}
+                    className="p-4 text-[#7C899C] hover:bg-[#F5F9FF]  rounded-b-2xl"
+                  >
+                    Tablets & E-readers
+                  </p>
+                </div>
+              )}
+            </div>
             <div className="hidden lg:flex  mt-8 2xl:hidden">
               <TPagination />
             </div>
